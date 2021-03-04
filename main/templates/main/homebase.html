@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{% static 'main/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css' %}">
     <link rel="stylesheet" href="{% static 'main/plugins/select2/dist/css/select2.min.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/autopart.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/vendor.css' %}">
 </head>
 <style type="text/css">
     .current-menu-item:hover{
@@ -52,7 +54,7 @@
                             </ul>
                             </ul>
                         </div>
-                    </div><a class="ps-logo" href="index.html"><img src="{% static 'main/img/logo_light.png' %}" alt=""></a>
+                    </div><a class="ps-logo" href="/"><img src="{% static 'main/img/logo_light.png' %}" alt=""></a>
                 </div>
                 <div class="header__center">
                     <form class="ps-form--quick-search" method="post" action="/search">
@@ -67,7 +69,7 @@
                         
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-user"></i></div>
-                            <div class="ps-block__right"><a href="my-account.html">Login</a><a href="my-account.html">Register</a></div>
+                            <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
                         </div>
                     </div>
                 </div>
@@ -80,10 +82,12 @@
                         <div style="color: #fff !important" class="menu__toggle"><i class="icon-menu"></i><span style="color: #fff !important"> Study Aid</span></div>
                         <div class="menu__content" >
                             <ul class="menu--dropdown">
-                                <li lass="current-menu-item "><a href="{% url 'cbt:setup_cbt' %}"><i class="icon-book2"></i>  Computer Based Test</a>
+                                <li class="current-menu-item "><a href="{% url 'cbt:setup_cbt' %}"><i class="icon-book2"></i>  Computer Based Test</a>
                                 </li>
+                                
                                 <li class="current-menu-item "><a href="#"><i class="icon-book2"></i>  Study</a>
                                 </li>
+
                                 <li class="current-menu-item "><a href="{% url 'compete:compete' %}"><i class="icon-book2"></i>  Compete</a>
                                 </li>
                                 <li class="current-menu-item "><a href="{% url 'question:share_question' %}"><i class="icon-book2"></i> Objective Questions</a></li>

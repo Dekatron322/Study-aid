@@ -1,22 +1,24 @@
-{% extends 'main/base.html' %}
+{% extends 'main/homebase.html' %}
 {% load static %}
       
 
 {% block content %}
 
-  <br />
-  <br />
-  <br />
+ <section class="ps-section--account ps-checkout">
 
-  <p>Theory Questions for you!</p>
-  {% for item in theorys %}
-  	<small>Question: {{ item.question }}</small><br />
-  	<small>Answer: {{ item.answer }}</small>
-  	<hr>
-  	<br />
-  {% endfor %}
-  <br />
-  <br />
+    
+
+  	<div class="ps-page--comming-soon">
+        <div class="container">
+        	{% for item in theorys %}
+            <div class="ps-page__header">
+                <h5>Question:</h5><br> <p>{{ item.question }} :</p>
+                <h5>Answer:</h5> <br> <p>{{ item.answer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 
 
