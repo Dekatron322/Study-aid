@@ -2285,6 +2285,7 @@ textarea.form-control {
 
 .ps-radio {
   position: relative;
+  display: block;
 }
 
 .ps-radio > input {
@@ -2294,11 +2295,11 @@ textarea.form-control {
 }
 
 .ps-radio label {
-  position: relative;
   margin-bottom: 0;
+  position: relative;
   padding-left: 30px;
   font-family: "Work Sans", sans-serif;
-  color: #737373;
+  color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   cursor: pointer;
 }
@@ -2312,31 +2313,30 @@ textarea.form-control {
   height: 20px;
   width: 20px;
   z-index: 10;
-  border: 1px solid rgba(19, 8, 1, 0.2);
-  background-color: #fff;
+  border: 1px solid #e4a663;
   transition: all .4s ease;
-  border-radius: 50%;
 }
 
 .ps-radio label:after {
   content: '';
   display: block;
   position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 10px;
+  top: 4px;
+  left: 7px;
+  width: 6px;
   height: 10px;
-  border-radius: 50%;
-  background-color: #fff;
-  z-index: 15;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  z-index: 10;
   opacity: 0;
-  transform: scale(1.5, 1.5);
-  transition: all 0.6s ease;
+  transform: rotate(0deg);
+  transition: all .4s ease;
 }
 
 .ps-radio input[type=radio]:checked ~ label:before {
-  background-color: #222222;
-  border-color: #222222;
+  background-color: #e4a663;
+  border-color: #e4a663;
 }
 
 .ps-radio input[type=radio]:checked ~ label:after {
@@ -17014,8 +17014,10 @@ html .bg--parallax {
 }
 
 .bg--cover {
-  background-position: 50% 50% !important;
+  background-position: 30% 30% !important;
   background-size: cover !important;
+  height: 100px !important;
+  max-height: 50% !important;
 }
 
 .bg--top {

@@ -1,10 +1,12 @@
-{% extends 'main/homebase.html' %}
+{% extends 'main/base.html' %}
 
 
 {% load static %}
       
 
 {% block content %}
+
+{% include "main/header.html" %}
 
 <style type="text/css">
     .ps-btn{
@@ -32,7 +34,7 @@
         <section class="ps-store-list">
             <div class="container">
                 <aside class="ps-block--store-banner">
-                    <div class="ps-block__content bg--cover" data-background="{% static 'main/img/default_banner.jpg' %}">
+                    <div class="ps-block__content bg--cover" data-background="{% static 'main/img/slider/home-1/frati13.gif' %}">
                         <h4 style="color:#fff">{{ study_resource.title }}</h4><a class="ps-block__inquiry" href="#"><i class="fa fa-question"></i> Inquiry</a>
                     </div>
                     <div class="ps-block__user" style="background-color: #9a0052 !important;">
@@ -106,44 +108,37 @@
                             </div>
 
 
-
+                            <style type="text/css">
+                                .hover-in-shadow{
+                                    
+                                    background-color: #fff;
+                                    padding: 15px;
+                                    margin: 15px;
+                                    border-radius: 10px !important;
+                                }
+                                
+                                .ps-documentx p:hover{
+                                    
+                                    color: #fff;
+                                    margin-left: 25px;
+                                }
+                            </style>
                             <div class="ps-tabs" style="background-color: #f5f5f5">
                                 <div class="ps-tab active" id="tab-1">
-                                    <div class="ps-shopping-product">
+                                    <div class="ps-shopping-product ">
                                         <div class="row">
-                                        	{% for item in study_resource.contents.all %}
-                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                                <div class="ps-product">
-                                                    <div class="ps-product__thumbnail"><a href="product-default.html"><img src="{% static 'main/img/1.jpg' %}" alt="" /></a>
-                                                        <ul class="ps-product__actions">
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                                                            <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ps-product__container"><a class="ps-product__vendor" href="#"></a>
-                                                        <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">{{ item.content }}</a>
-                                                            <div class="ps-product__rating">
-                                                                <select class="ps-rating" data-read-only="true">
-                                                                    <option value="1">1</option>
-                                                                    <option value="1">2</option>
-                                                                    <option value="1">3</option>
-                                                                    <option value="1">4</option>
-                                                                    <option value="2">5</option>
-                                                                </select><span>02</span>
-                                                            </div>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                        <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">{{ item.content }}</a>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        	<div class="ps-documentx " style="margin: 15px;">
+                                                <br>
+                                                {% for item in study_resource.contents.all %}
+                                                <p class="contact-item outer-shadow hover-in-shadow" style="margin: 15px; border-radius: 0% !important"><a href="" style="color: #000000"><i class="icon-document"></i> {{ item.content }}<i class="icon-point"></i>..continue</a></p>
+
+                                                {% endfor %}
                                             </div>
-                                            {% endfor %}
+
+
+
                                             
-                                    </div>
+                                        </div>
                                     <div class="ps-pagination" >
                                     	
                                     	<a href="{% url 'study_resource:contribute_resource' study_resource.id %}"><button class="ps-btn">Contribute to this Content</button></a>
@@ -180,42 +175,36 @@
                                 </div>
                             </div>
 
+                            <style type="text/css">
+                                .ps-documentxx{
+                                    margin: 10px;
+                                }
+                                .hover-in-shadow{
+                                    border-radius: 0 15% !important;
+
+                                }
+                                .hover-in-shadow:hover{
+                                    border-radius: 15% 0 !important;
+                                    overflow: none;
+                                }
+                            </style>
                             <div class="ps-tabs" style="background-color: #f5f5f5">
                                 <div class="ps-tab active" id="tab-1">
                                     <div class="ps-shopping-product">
                                         <div class="row">
-                                        	{% for item in study_resource.ebook.all %}
-                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                                <div class="ps-product">
-                                                    <div class="ps-product__thumbnail"><a href="product-default.html"><img src="{% static 'main/img/1.jpg' %}" alt="" /></a>
-                                                        <ul class="ps-product__actions">
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                                                            <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ps-product__container"><a class="ps-product__vendor" href="#"></a>
-                                                        <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">{{ item.ebook.url }}</a>
-                                                            <div class="ps-product__rating">
-                                                                <select class="ps-rating" data-read-only="true">
-                                                                    <option value="1">1</option>
-                                                                    <option value="1">2</option>
-                                                                    <option value="1">3</option>
-                                                                    <option value="1">4</option>
-                                                                    <option value="2">5</option>
-                                                                </select><span>02</span>
-                                                            </div>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                        <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">{{ item.ebook.url }}</a>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                    </div>
+                                            {% for item in study_resource.contents.all %}
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 contact-form">
+                                                <a href="{{ item.ebook.url }}">
+                                                <div class="ps-documentxx  contact-item outer-shadow hover-in-shadow" style="background-color: #fff">
+                                                    <img src="{% static 'main/img/5aa3ae359fc609199d0ff247.png' %}" alt="" style="margin-bottom: -25px;" />
+                                                    
+                                                    <p style="color: #000000; text-align: center;">{{ study_resource.title }} ebooks</p>
+                                                    <br>
+                                                    
                                                 </div>
+                                                </a>
                                             </div>
-                                            {% endfor %}
-                                            
+                                            {% endfor %} 
                                     </div>
 
                                     <div class="ps-pagination" >
@@ -239,155 +228,7 @@
                     		</div>
 
                             <br><br>
-                            <div class="ps-shopping ps-tab-root">
-                            <div class="ps-shopping__header">
-                                <p><strong>Vedios for this Resource</strong></p>
-                                <div class="ps-shopping__actions">
-                                    <div class="ps-shopping__view">
-                                        <p>View</p>
-                                        <ul class="ps-tab-list">
-                                            <li class="active"><a href="#tab-1"><i class="icon-grid"></i></a></li>
-                                            <li><a href="#tab-2"><i class="icon-list4"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="ps-tabs" style="background-color: #f5f5f5">
-                                <div class="ps-tab active" id="tab-1">
-                                    <div class="ps-shopping-product">
-                                        <div class="row">
-                                        	{% for item in study_resource.video.all %}
-                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                                <div class="ps-product">
-                                                    <div class="ps-product__thumbnail"><a href="product-default.html"><img src="{% static 'main/img/1.jpg' %}" alt="" /></a>
-                                                        <ul class="ps-product__actions">
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                                                            <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ps-product__container"><a class="ps-product__vendor" href="#"></a>
-                                                        <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">{{ item.video }}</a>
-                                                            <div class="ps-product__rating">
-                                                                <select class="ps-rating" data-read-only="true">
-                                                                    <option value="1">1</option>
-                                                                    <option value="1">2</option>
-                                                                    <option value="1">3</option>
-                                                                    <option value="1">4</option>
-                                                                    <option value="2">5</option>
-                                                                </select><span>02</span>
-                                                            </div>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                        <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">{{ item.video }}</a>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {% endfor %}
-                                            
-                                    </div>
-
-                                    <div class="ps-pagination" >
-                                    	
-                                    	<a href="{% url 'study_resource:contribute_ebook' study_resource.id %}"><button class="ps-btn">Contribute to this Video</button></a>
-                                    </div>
-
-
-                                    <div class="ps-pagination">
-                                        <ul class="pagination">
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                            	</div>
-                            </div>
-
-                            <br><br>
-                            
-                            <div class="ps-shopping ps-tab-root">
-                            <div class="ps-shopping__header">
-                                <p><strong>Images for this Resource</strong></p>
-                                <div class="ps-shopping__actions">
-                                    <div class="ps-shopping__view">
-                                        <p>View</p>
-                                        <ul class="ps-tab-list">
-                                            <li class="active"><a href="#tab-1"><i class="icon-grid"></i></a></li>
-                                            <li><a href="#tab-2"><i class="icon-list4"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="ps-tabs" style="background-color: #f5f5f5">
-                                <div class="ps-tab active" id="tab-1">
-                                    <div class="ps-shopping-product">
-                                        <div class="row">
-                                        	{% for item in study_resource.image.all %}
-                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                                <div class="ps-product">
-                                                    <div class="ps-product__thumbnail"><a href="product-default.html"><img src="{{ item.image.url }}" alt="" /></a>
-                                                        <ul class="ps-product__actions">
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                                                            <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ps-product__container"><a class="ps-product__vendor" href="#"></a>
-                                                        <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">{{ item.image.url }}</a>
-                                                            <div class="ps-product__rating">
-                                                                <select class="ps-rating" data-read-only="true">
-                                                                    <option value="1">1</option>
-                                                                    <option value="1">2</option>
-                                                                    <option value="1">3</option>
-                                                                    <option value="1">4</option>
-                                                                    <option value="2">5</option>
-                                                                </select><span>02</span>
-                                                            </div>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                        <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">{{ item.image.url }}</a>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {% endfor %}
-                                            
-                                    </div>
-
-                                    <div class="ps-pagination" >
-                                    	
-                                    	<a href="{% url 'study_resource:contribute_ebook' study_resource.id %}"><button class="ps-btn">Contribute to this Images</button></a>
-                                    	
-                                    </div>
-
-
-                                    <div class="ps-pagination">
-                                        <ul class="pagination">
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-
-
-                                <br><br>
                             <div class="ps-shopping ps-tab-root">
                             <div class="ps-shopping__header">
                                 <p><strong>Links for this Resource</strong></p>
@@ -402,47 +243,31 @@
                                 </div>
                             </div>
 
-                            <div class="ps-tabs" style="background-color: #f5f5f5">
+                                <div class="ps-tabs" style="background-color: #f5f5f5">
                                 <div class="ps-tab active" id="tab-1">
                                     <div class="ps-shopping-product">
+                                
                                         <div class="row">
                                         	{% for item in study_resource.links.all %}
-                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                                <div class="ps-product">
-                                                    <div class="ps-product__thumbnail"><a href="product-default.html"><img src="{% static 'main/img/1.jpg' %}" alt="" /></a>
-                                                        <ul class="ps-product__actions">
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                                                            <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                        </ul>
+                                            <div class=" col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 contact-item "><a href="{{ item.link }">
+                                                <div class="contact-item ps-product contact-item-inner contact-item outer-shadow " style="color: #000000; margin: 15px;">
+                                                    <div class="ps-product__thumbnail"><a href="{{ item.link }}">{{ item.link }}
                                                     </div>
-                                                    <div class="ps-product__container"><a class="ps-product__vendor" href="#"></a>
-                                                        <div class="ps-product__content"><a class="ps-product__title" href="{{ item.link }}">{{ item.link }}</a>
-                                                            <div class="ps-product__rating">
-                                                                <select class="ps-rating" data-read-only="true">
-                                                                    <option value="1">1</option>
-                                                                    <option value="1">2</option>
-                                                                    <option value="1">3</option>
-                                                                    <option value="1">4</option>
-                                                                    <option value="2">5</option>
-                                                                </select><span>02</span>
-                                                            </div>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
-                                                        <div class="ps-product__content hover"><a class="ps-product__title" href="{{ item.link }}">{{ item.link }}</a>
-                                                            <p class="ps-product__price sale">$990.99 <del>$1050.50 </del></p>
-                                                        </div>
+                                                    <div class="ps-product__container"><a style="color: #fff" class="ps-product__vendor" href="{{ item.link }}"></a>
+                                                        
+                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
+                                            </a>
                                             {% endfor %}
                                             
                                     </div>
                                     <div class="ps-pagination" >
                                     	
                                     	<a href="{% url 'study_resource:contribute_link' study_resource.id %}"><button class="ps-btn">Contribute to this Links</button></a>
-                                    	</ul>
+                                    	
                                     </div>
 
                                     <div class="ps-pagination">
@@ -459,6 +284,105 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="ps-shopping ps-tab-root">
+                            <div class="ps-shopping__header">
+                                <p><strong>Videos for this Resource</strong></p>
+                                <div class="ps-shopping__actions">
+                                    <div class="ps-shopping__view">
+                                        <p>View</p>
+                                        <ul class="ps-tab-list">
+                                            <li class="active"><a href="#tab-1"><i class="icon-grid"></i></a></li>
+                                            <li><a href="#tab-2"><i class="icon-list4"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            
+                           <div class="ps-section__content">
+                            <div class="row">
+                                {% for item in study_resource.contents.all %}
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                                    <div class="ps-block--category-room">
+                                        <div class="ps-block__thumbnail"><a href="shop-default.html"><iframe  src="https://www.youtube.com/embed/hdI2bqOjy3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture" allowfullscreen></iframe></a></div>
+                                        
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="ps-pagination" >
+                                        
+                                        <a href="{% url 'study_resource:contribute_link' study_resource.id %}"><button class="ps-btn">Contribute to this Video</button></a>
+                                        
+                                    </div>
+
+
+                                    <div class="ps-pagination">
+                                        <ul class="pagination">
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <br>
+
+                                    <div class="ps-shopping ps-tab-root">
+                            <div class="ps-shopping__header">
+                                <p><strong>Images for this Resource</strong></p>
+                                <div class="ps-shopping__actions">
+                                    <div class="ps-shopping__view">
+                                        <p>View</p>
+                                        <ul class="ps-tab-list">
+                                            <li class="active"><a href="#tab-1"><i class="icon-grid"></i></a></li>
+                                            <li><a href="#tab-2"><i class="icon-list4"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            
+                           <div class="ps-section__content">
+                            <div class="row">
+                                {% for item in study_resource.contents.all %}
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                                    <div class="ps-block--category-room ps-product__gallery" data-arrow="true">
+                                        <div class="ps-block__thumbnail item"><a href="{% static 'main/img/slider/home-1/frati13.gif' %}"><img src="{% static 'main/img/slider/home-1/frati13.gif' %}" alt=""></a></div>
+                                    <div class="ps-block__content"><a href="#">Living Rooom</a></div>
+
+
+                                </div>
+
+                            </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="ps-pagination" >
+                                        
+                                        <a href="{% url 'study_resource:contribute_link' study_resource.id %}"><button class="ps-btn">Contribute to this Video</button></a>
+                                        
+                                    </div>
+
+
+                                    <div class="ps-pagination">
+                                        <ul class="pagination">
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+
                         </div>
                     </div>
                         </div>
@@ -467,7 +391,9 @@
 
             </div>
 
-        </section>
+
+        
+                    <!------contact section ends--------->
     </div>
 
     {{ study_resource.title }}

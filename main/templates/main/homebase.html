@@ -25,11 +25,16 @@
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/autopart.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/vendor.css' %}">
+
 </head>
 <style type="text/css">
     .current-menu-item:hover{
         background-color: #ed017f !important;
         color: #fff;
+    }
+    .mega-menu h4:hover{
+        color: #ed017f !important;
+
     }
 </style>
 <body>
@@ -46,8 +51,7 @@
                                 </li>
                                 <li class="current-menu-item "><a href="#"><i class="icon-book2"></i>  Study</a>
                                 </li>
-                                <li class="current-menu-item "><a href="{% url 'compete:compete' %}"><i class="icon-book2"></i>  Compete</a>
-                                </li>
+                                
                                 <li class="current-menu-item "><a href="{% url 'question:share_question' %}"><i class="icon-book2"></i> Objective Questions</a></li>
                                 <li class="current-menu-item "><a href="{% url 'theory:share_theory' %}"><i class="icon-book2"></i> Theory Questions</a></li>
                                 <li class="current-menu-item "><a href="{% url 'study_resource:share_resource' %}"><i class="icon-book2"></i> Resource</a></li>
@@ -99,8 +103,12 @@
                 </div>
                 <div class="navigation__right">
                     <ul class="menu">
-                        <li class="menu-item-has-children"><a href="index.html" style="color: #fff !important">Home</a>
+                        <li class=" has-mega-menu"><span>
                         </li>
+                        <li class=" has-mega-menu"><span>
+                        </li>
+                        <li class=""><a href="{% url 'main:index' %}" style="color: #fff !important">Home</a></li>
+                        <li class=" has-mega-menu"><span></li>
                         <li class="menu-item-has-children has-mega-menu"><a href="#" style="color: #fff !important">Menu</a><span class="sub-toggle"></span>
                             <div class="mega-menu">
                                 <div class="mega-menu__column">
@@ -108,11 +116,12 @@
                                     <ul class="ps-dropdown-menu">
                                     <li><a href="{% url 'cbt:setup_cbt' %}">CBT</a></li>
                                     <li><a href="#">Study</a></li>
-                                    <li><a href="{% url 'compete:compete' %}">Compete</a></li>
+                                    
                                 </ul>
                                 </div>
                             </div>
                         </li>
+                         <li class=" has-mega-menu"><span></li>
                         <li class="menu-item-has-children has-mega-menu"><a href="#" style="color: #fff !important">Share</a><span class="sub-toggle"></span>
                             <div class="mega-menu">
                                 <div class="mega-menu__column">
@@ -125,38 +134,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="menu-item-has-children has-mega-menu"><a href="#" style="color: #fff !important">About</a><span class="sub-toggle"></span>
-                            <div class="mega-menu">
-                                <div class="mega-menu__column">
-                                    <h4>Blog Layout<span class="sub-toggle"></span></h4>
-                                    <ul class="mega-menu__list">
-                                        <li class="current-menu-item "><a href="blog-grid.html">Grid</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-list.html">Listing</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-small-thumb.html">Small Thumb</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-left-sidebar.html">Left Sidebar</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-right-sidebar.html">Right Sidebar</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mega-menu__column">
-                                    <h4>Single Blog<span class="sub-toggle"></span></h4>
-                                    <ul class="mega-menu__list">
-                                        <li class="current-menu-item "><a href="blog-detail.html">Single 1</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-detail-2.html">Single 2</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-detail-3.html">Single 3</a>
-                                        </li>
-                                        <li class="current-menu-item "><a href="blog-detail-4.html">Single 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
+                        
                     </ul>
                     <ul class="navigation__extra">
 
@@ -173,22 +151,16 @@
             </div>
         </nav>
     </header>
-    <header class="header header--mobile" data-sticky="true">
-        <div class="header__top" style="background-color: #ed017f;">
+    <header class="header header--mobile" data-sticky="true" style="background-color: #ed017f !important;">
+        <div class="header__top">
             <div class="header__left">
-                <p>Welcome to Martfury Online Shopping Store !</p>
+                
             </div>
             <div class="header__right">
                 <ul class="navigation__extra">
-                    <li><a href="#">Sell on Martfury</a></li>
-                    <li><a href="#">Tract your order</a></li>
+                    
                     <li>
-                        <div class="ps-dropdown"><a href="#">US Dollar</a>
-                            <ul class="ps-dropdown-menu">
-                                <li><a href="#">Us Dollar</a></li>
-                                <li><a href="#">Euro</a></li>
-                            </ul>
-                        </div>
+                        
                     </li>
                     <li>
                         <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
@@ -202,7 +174,7 @@
             </div>
         </div>
         <div class="navigation--mobile" style="background-color: #9a0052;">
-            <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="{% static 'main/img/logo_light.png' %}" alt=""></a></div>
+            <div class="navigation__left"><a class="ps-logo" href="/"><img src="{% static 'main/img/logo_light.png' %}" alt=""></a></div>
             <div class="navigation__right">
                 <div class="header__actions">
                     
@@ -214,7 +186,7 @@
                 </div>
             </div>
         </div>
-        <div class="ps-search--mobile" style="background-color: #fcb800 !important;">
+        <div class="ps-search--mobile" style="background-color: #ed017f !important;">
             <form class="ps-form--search-mobile" action="index.html" method="get">
                 <div class="form-group--nest">
                     <input class="form-control" type="text" placeholder="Search something...">
@@ -259,14 +231,30 @@
         </div>
         <div class="ps-panel__content">
             <ul class="menu--mobile">
-                <li class="menu-item-has-children"><a href="/">Home</a><span class="sub-toggle"></span>
+                <li class="menu-item-has-children"><a href="/">Home</a>
                     <ul class="menu--mobile">
-                        <li class="current-menu-item menu-item-has-children"><a href="{% url 'cbt:setup_cbt' %}">CBT</a><span class="sub-toggle"></span>
+                        <li class="current-menu-item menu-item-has-children"><a href="{% url 'cbt:setup_cbt' %}">CBT</a>
                         </li>
-                        <li class="current-menu-item menu-item-has-children"><a href="#">Study</a><span class="sub-toggle"></span>
+                        <li class="current-menu-item menu-item-has-children"><a href="#">Study</a>
                         </li>
-                        <li class="current-menu-item menu-item-has-children"><a href="{% url 'compete:compete' %}">Compete</a><span class="sub-toggle"></span>
+                        <li class="current-menu-item menu-item-has-children"><a href="{% url 'compete:compete' %}">Compete</a>
                         </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="#">Share</a><span class="sub-toggle"></span>
+                        <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <a href="{% url 'question:share_question' %}"><h4>Obj Question<span ></span></h4></a>
+                            
+                        </div>
+                        <div class="mega-menu__column">
+                            <a href="{% url 'theory:share_theory' %}"><h4>Theory Question</h4></a>
+                            
+                        </div>
+                        <div class="mega-menu__column">
+                            <a href="{% url 'study_resource:share_resource' %}"><h4>Resource</h4></a>
+                            
+                        </div>
+                    </div>
+                </li>
                     </ul>
                             
                 
