@@ -10,7 +10,7 @@
                                 <ul class="menu--dropdown">
                                 <li class="current-menu-item "><a href="{% url 'cbt:setup_cbt' %}"><i class="icon-book2"></i>  Computer Based Test</a>
                                 </li>
-                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i>  Study</a>
+                                <li class="current-menu-item "><a href="{% url 'study_resource:setup_study' %}"><i class="icon-book2"></i>  Study</a>
                                 </li>
                                 <li class="current-menu-item "><a href="{% url 'compete:compete' %}"><i class="icon-book2"></i>  Compete</a>
                                 </li>
@@ -35,7 +35,11 @@
                         
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-user"></i></div>
-                            <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
+                            <div class="ps-block__right">
+                                
+                                <a href="{% url 'main:profile' %}">Profile</a>
+                                <a href="{% url 'main:sign_out' %}">Logout</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -51,7 +55,7 @@
                                 <li class="current-menu-item "><a href="{% url 'cbt:setup_cbt' %}"><i class="icon-book2"></i>  Computer Based Test</a>
                                 </li>
                                 
-                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i>  Study</a>
+                                <li class="current-menu-item "><a href="{% url 'study_resource:setup_study' %}"><i class="icon-book2"></i>  Study</a>
                                 </li>
 
                                 <li class="current-menu-item "><a href="{% url 'compete:compete' %}"><i class="icon-book2"></i>  Compete</a>
@@ -77,7 +81,7 @@
                                     <h4>Menu<span class="sub-toggle"></span></h4>
                                     <ul class="ps-dropdown-menu">
                                     <li><a href="{% url 'cbt:setup_cbt' %}">CBT</a></li>
-                                    <li><a href="#">Study</a></li>
+                                    <li><a href="{% url 'study_resource:setup_study' %}">Study</a></li>
                                     
                                 </ul>
                                 </div>
@@ -101,11 +105,7 @@
                     <ul class="navigation__extra">
 
                         <li>
-                            <div class="ps-dropdown language"><a style="color: #fff !important" href="#"><img src="{% static 'main/img/flag/en.png' %}" alt="">English</a>
-                                <ul class="ps-dropdown-menu">
-                                    <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
-                                    <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
-                                </ul>
+                            <div class="ps-dropdown language"><a style="color: #fff !important" href=""><img src="{% static 'main/img/flag/en.png' %}" alt="">Logged in as {{ request.user.username }}</a>
                             </div>
                         </li>
                     </ul>
@@ -140,9 +140,13 @@
                     
                     </div>
                     <div class="ps-block--user-header">
-                        <div class="ps-block__left"><i class="icon-user"></i></div>
-                        <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
-                    </div>
+                            <div class="ps-block__left"><i class="icon-user"></i></div>
+                            <div class="ps-block__right">
+                                
+                                <a href="{% url 'main:profile' %}">Profile</a>
+                                <a href="{% url 'main:sign_out' %}">Logout</a>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

@@ -49,7 +49,7 @@
                                 <ul class="menu--dropdown">
                                 <li class="current-menu-item "><a href="{% url 'cbt:setup_cbt' %}"><i class="icon-book2"></i>  Computer Based Test</a>
                                 </li>
-                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i>  Study</a>
+                                <li class="current-menu-item "><a href="{% url 'study_resource:setup_study' %}"><i class="icon-book2"></i>  Study</a>
                                 </li>
                                 
                                 <li class="current-menu-item "><a href="{% url 'question:share_question' %}"><i class="icon-book2"></i> Objective Questions</a></li>
@@ -72,8 +72,21 @@
                     <div class="header__actions">
                         
                         <div class="ps-block--user-header">
-                            <div class="ps-block__left"><i class="icon-user"></i></div>
-                            <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
+                             {% if app_user.image %}
+                             <img style="height: 50px; width: 50px; align-items: center; margin: auto; border-radius: 50%" src="{{ app_user.image.url }}" alt="profile image">
+                            
+                            <div class="ps-block__right" style="align-items: center; padding-top: 6px">
+
+                                <a href="{% url 'main:profile' %}">Profile</a>
+                                <a href="{% url 'main:sign_out' %}">Logout</a>
+
+                                    {% else %}
+                                     <div class="ps-block__left"><i class="icon-user"></i></div>
+                                     <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
+                                    {% endif %}
+                           
+                            
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -89,7 +102,7 @@
                                 <li class="current-menu-item "><a href="{% url 'cbt:setup_cbt' %}"><i class="icon-book2"></i>  Computer Based Test</a>
                                 </li>
                                 
-                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i>  Study</a>
+                                <li class="current-menu-item "><a href="{% url 'study_resource:setup_study' %}"><i class="icon-book2"></i>  Study</a>
                                 </li>
 
                                 <li class="current-menu-item "><a href="{% url 'compete:compete' %}"><i class="icon-book2"></i>  Compete</a>
@@ -115,7 +128,7 @@
                                     <h4>Menu<span class="sub-toggle"></span></h4>
                                     <ul class="ps-dropdown-menu">
                                     <li><a href="{% url 'cbt:setup_cbt' %}">CBT</a></li>
-                                    <li><a href="#">Study</a></li>
+                                    <li><a href="{% url 'study_resource:setup_study' %}">Study</a></li>
                                     
                                 </ul>
                                 </div>
@@ -180,9 +193,21 @@
                     
                     </div>
                     <div class="ps-block--user-header">
-                        <div class="ps-block__left"><i class="icon-user"></i></div>
-                        <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
-                    </div>
+                             {% if app_user.image %}
+                             <img style="height: 50px; width: 50px; align-items: center; margin: auto; border-radius: 50%" src="{{ app_user.image.url }}" alt="profile image">
+                            
+                            <div class="ps-block__right" style="align-items: center; padding-top: 6px">
+
+                                <a href="{% url 'main:profile' %}">Profile</a>
+                                <a href="{% url 'main:sign_out' %}">Logout</a>
+
+                                    {% else %}
+                                     <div class="ps-block__left"><i class="icon-user"></i></div>
+                                     <div class="ps-block__right"><a href="{% url 'main:sign_in' %}">Login</a><a href="{% url 'main:sign_up' %}">Register</a></div>
+                                    {% endif %}
+                           
+                            
+                        </div>
                 </div>
             </div>
         </div>
@@ -235,7 +260,7 @@
                     <ul class="menu--mobile">
                         <li class="current-menu-item menu-item-has-children"><a href="{% url 'cbt:setup_cbt' %}">CBT</a>
                         </li>
-                        <li class="current-menu-item menu-item-has-children"><a href="#">Study</a>
+                        <li class="current-menu-item menu-item-has-children"><a href="{% url 'study_resource:setup_study' %}">Study</a>
                         </li>
                         <li class="current-menu-item menu-item-has-children"><a href="{% url 'compete:compete' %}">Compete</a>
                         </li>
@@ -285,24 +310,7 @@
             </div>
         </div>
     </footer>
-    <div class="ps-popup" id="subscribe" data-time="500">
-        <div class="ps-popup__content bg--cover" data-background="img/bg/subscribe.jpg"><a class="ps-popup__close" href="#"><i class="icon-cross"></i></a>
-            <form class="ps-form--subscribe-popup" action="index.html" method="get">
-                <div class="ps-form__content">
-                    <h4>Get <strong>25%</strong> Discount</h4>
-                    <p>Subscribe to the Martfury mailing list <br /> to receive updates on new arrivals, special offers <br /> and our promotions.</p>
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Email Address" required>
-                        <button class="ps-btn">Subscribe</button>
-                    </div>
-                    <div class="ps-checkbox">
-                        <input class="form-control" type="checkbox" id="not-show" name="not-show">
-                        <label for="not-show">Don't show this popup again</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+
     <div id="back2top"><i class="pe-7s-angle-up"></i></div>
     <div class="ps-site-overlay"></div>
     <div id="loader-wrapper">
