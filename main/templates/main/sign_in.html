@@ -1,4 +1,4 @@
-{% extends 'main/homebase.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
   
 
@@ -12,6 +12,21 @@
     .ps-btn:hover{
         background-color: #9a0052 !important;
         color: #fff !important;
+    }
+    .btn-success {
+        background-color: #9a0052 !important;
+        color: #fff !important;
+        border: none;
+    }
+    .btn-success:hover{
+        background-color: #ed017f !important;
+        color: #000000 !important;
+        border: none;
+    }
+    .btn-success a:hover{
+        
+        color: #000000 !important;
+        border: none;
     }
 </style>
 
@@ -44,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="ps-form__footer">
-                                
+                                <p>Don't have an account?  <button class="btn btn-success"><a href="{% url 'main:sign_up' %}">Create Account</a></button></p>
                             </div>
                         </div>
                         <div class="ps-tab" id="register">
